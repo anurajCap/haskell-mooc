@@ -64,10 +64,9 @@ distance x1 y1 x2 y2 = sqrt ((x2 - x1) ^ 2 + (y2 - y1) ^ 2)
 -- Ps. have a look at the built in function "even"
 
 eeny :: Integer -> String
-eeny x 
+eeny x
   | even x = "eeny"
   | otherwise = "meeny"
-
 
 ------------------------------------------------------------------------------
 -- Ex 6: here's the function checkPassword from the course material.
@@ -90,9 +89,9 @@ checkPassword password =
 -- in grams, and returns the cost in credits.
 
 postagePrice :: Int -> Int
-postagePrice x 
+postagePrice x
   | x <= 500 = 250
-  | x >500 && x <=5000 =  300 + x
+  | x > 500 && x <= 5000 = 300 + x
   | x > 5000 = 6000
 
 ------------------------------------------------------------------------------
@@ -113,14 +112,16 @@ isZero _ = False
 
 sumTo :: Integer -> Integer
 sumTo 0 = 0
-sumTo x = x + sumTo (x-1) 
+sumTo x = x + sumTo (x - 1)
+
 ------------------------------------------------------------------------------
 -- Ex 10: power n k should compute n to the power k (i.e. n^k)
 -- Use recursion.
 
 power :: Integer -> Integer -> Integer
-power n 0 = 1 
-power n k = n * power n (k-1)
+power n 0 = 1
+power n k = n * power n (k - 1)
+
 ------------------------------------------------------------------------------
 -- Ex 11: ilog3 n should be the number of times you can divide given
 -- number by three (rounding down) before you get 0.
@@ -139,4 +140,4 @@ power n k = n * power n (k-1)
 
 ilog3 :: Integer -> Integer
 ilog3 0 = 0
-ilog3 x = 1 + ilog3 (x`div`3)
+ilog3 x = 1 + ilog3 (x `div` 3)
